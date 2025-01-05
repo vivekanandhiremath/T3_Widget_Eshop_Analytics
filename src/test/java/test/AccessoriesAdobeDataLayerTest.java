@@ -21,7 +21,7 @@ public class AccessoriesAdobeDataLayerTest extends BaseClass {
         hp.clickOnLeadFormCloseIcon();
         AdobeDataLayerUtils.sleep(SLEEP_TIME_MILLIS);
 
-        hp.clickOnLeadAccessoriesSideMenu();
+        hp.clickOnAccessoriesSideMenu();
 
         AdobeDataLayerUtils.sleep(SLEEP_TIME_MILLIS);
         System.out.println("Data Layer Size : Overall Event triggered Count" + validator.getDataLayerSize());

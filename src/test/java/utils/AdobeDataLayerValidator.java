@@ -10,6 +10,7 @@ public class AdobeDataLayerValidator {
         this.js = js;
     }
 
+
     public String validateField(String script, String expectedValue, String fieldName) {
         String result;
         try {
@@ -18,12 +19,15 @@ public class AdobeDataLayerValidator {
                 result = fieldName + " is valid: " + actualValue;
             } else {
                 result = "Invalid " + fieldName + ": " + actualValue + " (Expected: " + expectedValue + ")";
+//                throw new AssertionError(result);
             }
         } catch (Exception e) {
             result = "Error validating " + fieldName + ": " + e.getMessage();
+            throw new AssertionError(result);
         }
         return result;
     }
+
 
     public int getDataLayerSize() {
         try {
@@ -36,4 +40,8 @@ public class AdobeDataLayerValidator {
     private String toString(Object obj) {
         return (obj == null) ? "" : obj.toString();
     }
+
+
 }
+
+
