@@ -14,26 +14,38 @@ import java.util.Map;
 public class WebDriverUtil {
     public static WebDriver driver;
 
-    public static WebDriver initializeDriver(String responsivestate, String browser) throws IllegalArgumentException {
+
+    public static WebDriver initializeDriver(String responsivestate, String browser, boolean headlessMode) throws IllegalArgumentException {
         try {
             if (responsivestate.equalsIgnoreCase("desktop")) {
                 if (browser.equalsIgnoreCase("chrome")) {
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("-incognito");
-                    options.addArguments("-headless");
+
+                    if (headlessMode) {
+                        options.addArguments("-headless");
+                    }
+
                     driver = new ChromeDriver(options);
                     driver.manage().window().maximize();
                 } else if (browser.equalsIgnoreCase("firefox")) {
                     FirefoxOptions options = new FirefoxOptions();
                     options.addArguments("-private");
-                    options.addArguments("-headless");
+
+                    if (headlessMode) {
+                        options.addArguments("-headless");
+                    }
 
                     driver = new FirefoxDriver(options);
                     driver.manage().window().maximize();
                 } else if (browser.equalsIgnoreCase("edge")) {
                     EdgeOptions options = new EdgeOptions();
                     options.addArguments("-private");
-                    options.addArguments("-headless");
+
+                    if (headlessMode) {
+                        options.addArguments("-headless");
+                    }
+
                     driver = new EdgeDriver(options);
                     driver.manage().window().maximize();
                 } else {
@@ -48,7 +60,11 @@ public class WebDriverUtil {
                     options.setExperimentalOption("mobileEmulation", mobileEmulation);
                     options.setExperimentalOption("args", new String[]{"--window-size=768,1024"});
                     options.addArguments("-incognito");
-                    options.addArguments("-headless");
+
+                    if (headlessMode) {
+                        options.addArguments("-headless");
+                    }
+
                     driver = new ChromeDriver(options);
                 } else if (browser.equalsIgnoreCase("edge")) {
                     Map<String, String> mobileEmulation = new HashMap<>();
@@ -57,7 +73,11 @@ public class WebDriverUtil {
                     options.setExperimentalOption("mobileEmulation", mobileEmulation);
                     options.setExperimentalOption("args", new String[]{"--window-size=768,1024"});
                     options.addArguments("-private");
-                    options.addArguments("-headless");
+
+                    if (headlessMode) {
+                        options.addArguments("-headless");
+                    }
+
                     driver = new EdgeDriver(options);
                 } else {
                     throw new IllegalArgumentException("Since Firefox doesn't support mobile emulator, not able to check as tablet responsive for browser: " + browser);
@@ -71,7 +91,11 @@ public class WebDriverUtil {
                     options.setExperimentalOption("mobileEmulation", mobileEmulation);
                     options.setExperimentalOption("args", new String[]{"--window-size=430,932"});
                     options.addArguments("-incognito");
-                    options.addArguments("-headless");
+
+                    if (headlessMode) {
+                        options.addArguments("-headless");
+                    }
+
                     driver = new ChromeDriver(options);
                 } else if (browser.equalsIgnoreCase("edge")) {
                     Map<String, String> mobileEmulation = new HashMap<>();
@@ -80,7 +104,11 @@ public class WebDriverUtil {
                     options.setExperimentalOption("mobileEmulation", mobileEmulation);
                     options.setExperimentalOption("args", new String[]{"--window-size=430,932"});
                     options.addArguments("-private");
-                    options.addArguments("-headless");
+
+                    if (headlessMode) {
+                        options.addArguments("-headless");
+                    }
+
                     driver = new EdgeDriver(options);
                 } else {
                     throw new IllegalArgumentException("Since Firefox doesn't support mobile emulator, not able to check as mobile responsive for browser: " + browser);

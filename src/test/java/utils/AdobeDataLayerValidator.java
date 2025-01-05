@@ -7,25 +7,26 @@ public class AdobeDataLayerValidator {
     private final JavascriptExecutor js;
 
     public AdobeDataLayerValidator(JavascriptExecutor js) {
+        if (js == null) {
+            throw new IllegalArgumentException("JavascriptExecutor cannot be null");
+        }
         this.js = js;
     }
 
 
-    public String validateField(String script, String expectedValue, String fieldName) {
-        String result;
+    public boolean validateField(String script, String expectedValue, String fieldName) {
         try {
             String actualValue = toString(js.executeScript(script));
             if (actualValue.equals(expectedValue)) {
-                result = fieldName + " is valid: " + actualValue;
+                return true;
             } else {
-                result = "Invalid " + fieldName + ": " + actualValue + " (Expected: " + expectedValue + ")";
-//                throw new AssertionError(result);
+                System.err.println("Invalid " + fieldName + ": " + actualValue + " (Expected: " + expectedValue + ")");
+                return false;
             }
         } catch (Exception e) {
-            result = "Error validating " + fieldName + ": " + e.getMessage();
-            throw new AssertionError(result);
+            System.err.println("Error validating " + fieldName + ": " + e.getMessage());
+            return false;
         }
-        return result;
     }
 
 

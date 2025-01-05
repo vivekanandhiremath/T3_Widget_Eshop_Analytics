@@ -29,11 +29,17 @@ public class HomePage extends BasePage {
     private WebElement accessoriessideMenu;
     @FindBy(xpath = "//span[.='Apply for Credit']")
     private WebElement applyForCreditisideMenu;
+    @FindBy(xpath = "(//span[.='Details'])[1]")
+    private WebElement detailsSideMenu;
 
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
+    public void clickOnDetailsSideMenu() {
+        ElementUtils.sleep(THREAD_SLEEP_TIME_MILLIS);
+        utils.clickOnElement(detailsSideMenu, EXPLICIT_WAIT_IN_SECONDS);
+    }
 
     public void clickOnNewVehicles() {
         ElementUtils.sleep(THREAD_SLEEP_TIME_MILLIS);
@@ -80,5 +86,6 @@ public class HomePage extends BasePage {
         ElementUtils.sleep(THREAD_SLEEP_TIME_MILLIS);
         utils.clickOnElement(applyForCreditisideMenu, EXPLICIT_WAIT_IN_SECONDS);
     }
+
 
 }

@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import utils.AdobeDataLayerValidator;
+import utils.ReadProperty;
 import utils.WebDriverUtil;
 
 import java.util.ArrayList;
@@ -14,10 +15,16 @@ public class BaseClass {
     protected WebDriver driver;
     protected AdobeDataLayerValidator validator;
     protected List<String> assertionFailures;
+    protected ReadProperty read = new ReadProperty("browser.properties");
 
     @BeforeClass
     public void setUp() {
-        driver = WebDriverUtil.initializeDriver("desktop", "chrome");
+        String responsivestate = read.getProperty("responsivestate");
+        String browser = read.getProperty("browser");
+        boolean headlessMode = Boolean.parseBoolean(read.getProperty("headlessMode"));
+
+
+        driver = WebDriverUtil.initializeDriver(responsivestate, browser, headlessMode);
 
         validator = new AdobeDataLayerValidator((JavascriptExecutor) driver);
         assertionFailures = new ArrayList<>();
