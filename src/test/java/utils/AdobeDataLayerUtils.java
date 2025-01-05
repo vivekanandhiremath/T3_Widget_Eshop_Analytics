@@ -11,13 +11,6 @@ public class AdobeDataLayerUtils {
         driver.get(url);
     }
 
-    public static void sleep(int millis) {
-        try {
-            Thread.sleep(millis);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-    }
 
     private static String getEventType(WebDriver driver, int index) {
         String script = "return adobeDataLayer[" + index + "].event;";

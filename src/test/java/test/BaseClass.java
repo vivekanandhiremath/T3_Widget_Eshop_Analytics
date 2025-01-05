@@ -28,7 +28,6 @@ public class BaseClass {
 
         WebDriverUtil.quitDriver(driver);
         if (!assertionFailures.isEmpty()) {
-            // Fail the test if there were assertion failures
             assertionFailures.forEach(System.err::println);
             assert false : "There were assertion failures!";
         }

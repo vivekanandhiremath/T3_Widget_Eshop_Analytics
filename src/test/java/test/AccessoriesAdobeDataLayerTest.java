@@ -9,7 +9,7 @@ import java.util.Map;
 public class AccessoriesAdobeDataLayerTest extends BaseClass {
 
     private static final String BASE_URL = "https://old-dealeradmin.eshopdemo.net/widget/redesign";
-    private static final int SLEEP_TIME_MILLIS = 5000;
+
 
     @Test
     public void validateEventForWhenAUserHasFinishedLoadingThePage() {
@@ -17,7 +17,6 @@ public class AccessoriesAdobeDataLayerTest extends BaseClass {
         AdobeDataLayerUtils.navigateToPage(driver, BASE_URL);
         HomePage hp = new HomePage(driver);
         hp.clickOnNewVehicles();
-        AdobeDataLayerUtils.sleep(SLEEP_TIME_MILLIS);
         hp.clickOnLeadFormCloseIcon();
         AdobeDataLayerUtils.sleep(SLEEP_TIME_MILLIS);
 

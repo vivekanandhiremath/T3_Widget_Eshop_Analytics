@@ -3,8 +3,10 @@ package page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utils.ElementUtils;
 
 import static utils.CommonUtils.EXPLICIT_WAIT_IN_SECONDS;
+import static utils.CommonUtils.THREAD_SLEEP_TIME_MILLIS;
 
 public class HomePage extends BasePage {
 
@@ -32,40 +34,50 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
+
     public void clickOnNewVehicles() {
+        ElementUtils.sleep(THREAD_SLEEP_TIME_MILLIS);
         utils.clickOnElement(usedVehiclePaymentOptions, EXPLICIT_WAIT_IN_SECONDS);
     }
 
     public void clickOnLeadFormCloseIcon() {
+        ElementUtils.sleep(THREAD_SLEEP_TIME_MILLIS);
         utils.clickOnElement(leadFormCloseIcon, EXPLICIT_WAIT_IN_SECONDS);
     }
 
     public void clickOnSubmitSideMenu() {
+        ElementUtils.sleep(THREAD_SLEEP_TIME_MILLIS);
         utils.clickOnElement(submitSideMenu, EXPLICIT_WAIT_IN_SECONDS);
     }
 
     public void clickOnAccessoriesSideMenu() {
+        ElementUtils.sleep(THREAD_SLEEP_TIME_MILLIS);
         utils.clickOnElement(accessoriessideMenu, EXPLICIT_WAIT_IN_SECONDS);
     }
 
     public void clickOnEshopLogo() {
+        ElementUtils.sleep(THREAD_SLEEP_TIME_MILLIS);
         utils.clickOnElement(eshopLogo, EXPLICIT_WAIT_IN_SECONDS);
 
     }
 
     public void clickOnTopNavBarClose() {
+        ElementUtils.sleep(THREAD_SLEEP_TIME_MILLIS);
         utils.clickOnElement(topNavBarCloseIcon, EXPLICIT_WAIT_IN_SECONDS);
     }
 
     public void clickOnTradeIn() {
+        ElementUtils.sleep(THREAD_SLEEP_TIME_MILLIS);
         utils.clickOnElement(tradInSideMenu, EXPLICIT_WAIT_IN_SECONDS);
     }
 
     public void clickOnProtection() {
+        ElementUtils.sleep(THREAD_SLEEP_TIME_MILLIS);
         utils.clickOnElement(protectionSideMenu, EXPLICIT_WAIT_IN_SECONDS);
     }
 
     public void clickOnApplyForCredit() {
+        ElementUtils.sleep(THREAD_SLEEP_TIME_MILLIS);
         utils.clickOnElement(applyForCreditisideMenu, EXPLICIT_WAIT_IN_SECONDS);
     }
 

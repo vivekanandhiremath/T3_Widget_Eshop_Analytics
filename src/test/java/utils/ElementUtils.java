@@ -15,6 +15,14 @@ public class ElementUtils {
 
     }
 
+    public static void sleep(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
     private WebElement waitForAnElement(WebElement element, long durationinsec) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(durationinsec));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -25,6 +33,5 @@ public class ElementUtils {
         webelement.click();
 
     }
-
 
 }

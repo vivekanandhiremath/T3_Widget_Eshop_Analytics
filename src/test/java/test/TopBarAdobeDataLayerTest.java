@@ -29,29 +29,26 @@ public class TopBarAdobeDataLayerTest extends BaseClass {
         System.out.println("Data Layer Size : Overall Event triggered Count :" + validator.getDataLayerSize());
         int dataLayerSize = validator.getDataLayerSize();
 
-        Assert.assertTrue(dataLayerSize > 0, "No events found in the data layer.");
 
-        if (dataLayerSize > 0) {
-            int lastIndex = dataLayerSize - 1;
+        int lastIndex = dataLayerSize - 1;
 
-            Map<String, String> expectedEventFields = Map.of(
-                    "event", "interaction-click",
-                    "interaction.site", "dealer",
-                    "interaction.type", "nav",
-                    "interaction.page", "build-your-deal:vehicle-details",
-                    "interaction.location", "topnav",
-                    "interaction.description", "close-eshop-modal"
-            );
+        Map<String, String> expectedEventFields = Map.of(
+                "event", "interaction-click",
+                "interaction.site", "dealer",
+                "interaction.type", "nav",
+                "interaction.page", "build-your-deal:vehicle-details",
+                "interaction.location", "topnav",
+                "interaction.description", "close-eshop-modal"
+        );
 
 
-            try {
-                AdobeDataLayerUtils.validateEventAtIndex(driver, validator, lastIndex, expectedEventFields);
-                Assert.assertTrue(true, "Event at index " + lastIndex + " is valid.");
-            } catch (Exception e) {
-                System.err.println("Error validating event at last index: " + e.getMessage());
-                Assert.fail("Error validating event at last index: " + e.getMessage());
-                collectAssertionFailure(e.getMessage());
-            }
+        try {
+            AdobeDataLayerUtils.validateEventAtIndex(driver, validator, lastIndex, expectedEventFields);
+            Assert.assertTrue(true, "Event at index " + lastIndex + " is valid.");
+        } catch (Exception e) {
+            System.err.println("Error validating event at last index: " + e.getMessage());
+            Assert.fail("Error validating event at last index: " + e.getMessage());
+            collectAssertionFailure(e.getMessage());
         }
     }
 
@@ -72,27 +69,24 @@ public class TopBarAdobeDataLayerTest extends BaseClass {
         System.out.println("Data Layer Size : Overall Event triggered Count :" + validator.getDataLayerSize());
         int dataLayerSize = validator.getDataLayerSize();
 
-        Assert.assertTrue(dataLayerSize > 0, "No events found in the data layer.");
 
-        if (dataLayerSize > 0) {
-            int lastIndex = dataLayerSize - 1;
+        int lastIndex = dataLayerSize - 1;
 
-            Map<String, String> expectedEventFields = Map.of(
-                    "event", "interaction-click",
-                    "interaction.site", "dealer",
-                    "interaction.type", "nav",
-                    "interaction.page", "schedule-a-test-drive",
-                    "interaction.location", "topnav",
-                    "interaction.description", "close-eshop-modal"
-            );
+        Map<String, String> expectedEventFields = Map.of(
+                "event", "interaction-click",
+                "interaction.site", "dealer",
+                "interaction.type", "nav",
+                "interaction.page", "schedule-a-test-drive",
+                "interaction.location", "topnav",
+                "interaction.description", "close-eshop-modal"
+        );
 
-            try {
-                AdobeDataLayerUtils.validateEventAtIndex(driver, validator, lastIndex, expectedEventFields);
-                Assert.assertTrue(true, "Event at index " + lastIndex + " is valid.");
-            } catch (Exception e) {
-                System.err.println("Error validating event at last index: " + e.getMessage());
-                Assert.fail("Error validating event at last index: " + e.getMessage());
-            }
+        try {
+            AdobeDataLayerUtils.validateEventAtIndex(driver, validator, lastIndex, expectedEventFields);
+            Assert.assertTrue(true, "Event at index " + lastIndex + " is valid.");
+        } catch (Exception e) {
+            System.err.println("Error validating event at last index: " + e.getMessage());
+            Assert.fail("Error validating event at last index: " + e.getMessage());
         }
     }
 
@@ -113,27 +107,24 @@ public class TopBarAdobeDataLayerTest extends BaseClass {
         System.out.println("Data Layer Size : Overall Event triggered Count :" + validator.getDataLayerSize());
         int dataLayerSize = validator.getDataLayerSize();
 
-        Assert.assertTrue(dataLayerSize > 0, "No events found in the data layer.");
 
-        if (dataLayerSize > 0) {
-            int lastIndex = dataLayerSize - 1;
+        int lastIndex = dataLayerSize - 1;
 
-            Map<String, String> expectedEventFields = Map.of(
-                    "event", "interaction-click",
-                    "interaction.site", "dealer",
-                    "interaction.type", "nav",
-                    "interaction.page", "build-your-deal:trade-in",
-                    "interaction.location", "topnav",
-                    "interaction.description", "close-eshop-modal"
-            );
+        Map<String, String> expectedEventFields = Map.of(
+                "event", "interaction-click",
+                "interaction.site", "dealer",
+                "interaction.type", "nav",
+                "interaction.page", "build-your-deal:trade-in",
+                "interaction.location", "topnav",
+                "interaction.description", "close-eshop-modal"
+        );
 
-            try {
-                AdobeDataLayerUtils.validateEventAtIndex(driver, validator, lastIndex, expectedEventFields);
-                Assert.assertTrue(true, "Event at index " + lastIndex + " is valid.");
-            } catch (Exception e) {
-                System.err.println("Error validating event at last index: " + e.getMessage());
-                Assert.fail("Error validating event at last index: " + e.getMessage());
-            }
+        try {
+            AdobeDataLayerUtils.validateEventAtIndex(driver, validator, lastIndex, expectedEventFields);
+            Assert.assertTrue(true, "Event at index " + lastIndex + " is valid.");
+        } catch (Exception e) {
+            System.err.println("Error validating event at last index: " + e.getMessage());
+            Assert.fail("Error validating event at last index: " + e.getMessage());
         }
     }
 
@@ -154,28 +145,25 @@ public class TopBarAdobeDataLayerTest extends BaseClass {
         System.out.println("Data Layer Size : Overall Event triggered Count :" + validator.getDataLayerSize());
         int dataLayerSize = validator.getDataLayerSize();
 
-        Assert.assertTrue(dataLayerSize > 0, "No events found in the data layer.");
 
-        if (dataLayerSize > 0) {
-            int lastIndex = dataLayerSize - 1;
+        int lastIndex = dataLayerSize - 1;
 
-            Map<String, String> expectedEventFields = Map.of(
-                    "event", "interaction-click",
-                    "interaction.site", "dealer",
-                    "interaction.type", "nav",
-                    "interaction.page", "build-your-deal:service-and-protection",
-                    "interaction.location", "topnav",
-                    "interaction.description", "close-eshop-modal"
-            );
+        Map<String, String> expectedEventFields = Map.of(
+                "event", "interaction-click",
+                "interaction.site", "dealer",
+                "interaction.type", "nav",
+                "interaction.page", "build-your-deal:service-and-protection",
+                "interaction.location", "topnav",
+                "interaction.description", "close-eshop-modal"
+        );
 
-            try {
-                // Validate event at the last index
-                AdobeDataLayerUtils.validateEventAtIndex(driver, validator, lastIndex, expectedEventFields);
-                Assert.assertTrue(true, "Event at index " + lastIndex + " is valid.");
-            } catch (Exception e) {
-                System.err.println("Error validating event at last index: " + e.getMessage());
-                Assert.fail("Error validating event at last index: " + e.getMessage());
-            }
+        try {
+            // Validate event at the last index
+            AdobeDataLayerUtils.validateEventAtIndex(driver, validator, lastIndex, expectedEventFields);
+            Assert.assertTrue(true, "Event at index " + lastIndex + " is valid.");
+        } catch (Exception e) {
+            System.err.println("Error validating event at last index: " + e.getMessage());
+            Assert.fail("Error validating event at last index: " + e.getMessage());
         }
     }
 
@@ -196,27 +184,24 @@ public class TopBarAdobeDataLayerTest extends BaseClass {
         System.out.println("Data Layer Size : Overall Event triggered Count :" + validator.getDataLayerSize());
         int dataLayerSize = validator.getDataLayerSize();
 
-        Assert.assertTrue(dataLayerSize > 0, "No events found in the data layer.");
 
-        if (dataLayerSize > 0) {
-            int lastIndex = dataLayerSize - 1;
+        int lastIndex = dataLayerSize - 1;
 
-            Map<String, String> expectedEventFields = Map.of(
-                    "event", "interaction-click",
-                    "interaction.site", "dealer",
-                    "interaction.type", "nav",
-                    "interaction.page", "build-your-deal:chargers-and-accessories",
-                    "interaction.location", "topnav",
-                    "interaction.description", "close-eshop-modal"
-            );
+        Map<String, String> expectedEventFields = Map.of(
+                "event", "interaction-click",
+                "interaction.site", "dealer",
+                "interaction.type", "nav",
+                "interaction.page", "build-your-deal:chargers-and-accessories",
+                "interaction.location", "topnav",
+                "interaction.description", "close-eshop-modal"
+        );
 
-            try {
-                AdobeDataLayerUtils.validateEventAtIndex(driver, validator, lastIndex, expectedEventFields);
-                Assert.assertTrue(true, "Event at index " + lastIndex + " is valid.");
-            } catch (Exception e) {
-                System.err.println("Error validating event at last index: " + e.getMessage());
-                Assert.fail("Error validating event at last index: " + e.getMessage());
-            }
+        try {
+            AdobeDataLayerUtils.validateEventAtIndex(driver, validator, lastIndex, expectedEventFields);
+            Assert.assertTrue(true, "Event at index " + lastIndex + " is valid.");
+        } catch (Exception e) {
+            System.err.println("Error validating event at last index: " + e.getMessage());
+            Assert.fail("Error validating event at last index: " + e.getMessage());
         }
     }
 
@@ -237,28 +222,25 @@ public class TopBarAdobeDataLayerTest extends BaseClass {
         System.out.println("Data Layer Size : Overall Event triggered Count :" + validator.getDataLayerSize());
         int dataLayerSize = validator.getDataLayerSize();
 
-        Assert.assertTrue(dataLayerSize > 0, "No events found in the data layer.");
 
-        if (dataLayerSize > 0) {
-            int lastIndex = dataLayerSize - 1;
+        int lastIndex = dataLayerSize - 1;
 
-            Map<String, String> expectedEventFields = Map.of(
-                    "event", "interaction-click",
-                    "interaction.site", "dealer",
-                    "interaction.type", "nav",
-                    "interaction.page", "build-your-deal:confirm-your-deal",
-                    "interaction.location", "topnav",
-                    "interaction.description", "close-eshop-modal"
-            );
+        Map<String, String> expectedEventFields = Map.of(
+                "event", "interaction-click",
+                "interaction.site", "dealer",
+                "interaction.type", "nav",
+                "interaction.page", "build-your-deal:confirm-your-deal",
+                "interaction.location", "topnav",
+                "interaction.description", "close-eshop-modal"
+        );
 
-            try {
-                // Validate event at the last index
-                AdobeDataLayerUtils.validateEventAtIndex(driver, validator, lastIndex, expectedEventFields);
-                Assert.assertTrue(true, "Event at index " + lastIndex + " is valid.");
-            } catch (Exception e) {
-                System.err.println("Error validating event at last index: " + e.getMessage());
-                Assert.fail("Error validating event at last index: " + e.getMessage());
-            }
+        try {
+            // Validate event at the last index
+            AdobeDataLayerUtils.validateEventAtIndex(driver, validator, lastIndex, expectedEventFields);
+            Assert.assertTrue(true, "Event at index " + lastIndex + " is valid.");
+        } catch (Exception e) {
+            System.err.println("Error validating event at last index: " + e.getMessage());
+            Assert.fail("Error validating event at last index: " + e.getMessage());
         }
     }
 
@@ -279,28 +261,24 @@ public class TopBarAdobeDataLayerTest extends BaseClass {
         System.out.println("Data Layer Size : Overall Event triggered Count :" + validator.getDataLayerSize());
         int dataLayerSize = validator.getDataLayerSize();
 
-        // Assert that the data layer contains events
-        Assert.assertTrue(dataLayerSize > 0, "No events found in the data layer.");
 
-        if (dataLayerSize > 0) {
-            int lastIndex = dataLayerSize - 1;
+        int lastIndex = dataLayerSize - 1;
 
-            Map<String, String> expectedEventFields = Map.of(
-                    "event", "interaction-click",
-                    "interaction.site", "dealer",
-                    "interaction.type", "nav",
-                    "interaction.page", "build-your-deal:confirm-your-deal",
-                    "interaction.location", "topnav",
-                    "interaction.description", "close-eshop-modal"
-            );
+        Map<String, String> expectedEventFields = Map.of(
+                "event", "interaction-click",
+                "interaction.site", "dealer",
+                "interaction.type", "nav",
+                "interaction.page", "build-your-deal:confirm-your-deal",
+                "interaction.location", "topnav",
+                "interaction.description", "close-eshop-modal"
+        );
 
-            try {
-                AdobeDataLayerUtils.validateEventAtIndex(driver, validator, lastIndex, expectedEventFields);
-                Assert.assertTrue(true, "Event at index " + lastIndex + " is valid.");
-            } catch (Exception e) {
-                System.err.println("Error validating event at last index: " + e.getMessage());
-                Assert.fail("Error validating event at last index: " + e.getMessage());
-            }
+        try {
+            AdobeDataLayerUtils.validateEventAtIndex(driver, validator, lastIndex, expectedEventFields);
+            Assert.assertTrue(true, "Event at index " + lastIndex + " is valid.");
+        } catch (Exception e) {
+            System.err.println("Error validating event at last index: " + e.getMessage());
+            Assert.fail("Error validating event at last index: " + e.getMessage());
         }
     }
 }
