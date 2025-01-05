@@ -1,5 +1,6 @@
 package page;
 
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,9 +14,11 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "//img[@alt='delivery icon']")
     private WebElement submitSideMenu;
+
     @FindBy(xpath = "(//button[@role='Close'])[2]")
     private WebElement leadFormCloseIcon;
-    @FindBy(xpath = "(//button[@id='expressBtn'])[1]")
+
+    @FindBy(xpath = "(//button[@id='expressBtn'])[2]")
     private WebElement usedVehiclePaymentOptions;
     @FindBy(xpath = "//div[@class='widget_e-shop']")
     private WebElement eshopLogo;
@@ -31,6 +34,8 @@ public class HomePage extends BasePage {
     private WebElement applyForCreditisideMenu;
     @FindBy(xpath = "(//span[.='Details'])[1]")
     private WebElement detailsSideMenu;
+    @FindBy(xpath = "//input[@placeholder='firstName']")
+    private WebElement firstnametextfield;
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -46,9 +51,18 @@ public class HomePage extends BasePage {
         utils.clickOnElement(usedVehiclePaymentOptions, EXPLICIT_WAIT_IN_SECONDS);
     }
 
-    public void clickOnLeadFormCloseIcon() {
+    public void handelLeadForm(String firstname) {
         ElementUtils.sleep(THREAD_SLEEP_TIME_MILLIS);
-        utils.clickOnElement(leadFormCloseIcon, EXPLICIT_WAIT_IN_SECONDS);
+
+        try {
+            if (leadFormCloseIcon.isDisplayed()) {
+                System.out.println(leadFormCloseIcon.isDisplayed());
+                utils.clickOnElement(leadFormCloseIcon, EXPLICIT_WAIT_IN_SECONDS);
+            }
+        } catch (ElementNotInteractableException e) {
+            System.out.println("executing catch");
+            utils.typeIntoField(firstnametextfield, firstname, EXPLICIT_WAIT_IN_SECONDS);
+        }
     }
 
     public void clickOnSubmitSideMenu() {

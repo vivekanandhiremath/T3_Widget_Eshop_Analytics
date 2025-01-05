@@ -2,7 +2,7 @@ package test;
 
 import org.testng.annotations.Test;
 import page.HomePage;
-import utils.AdobeDataLayerUtils;
+import utils.AdobeDataLayerValidator;
 import utils.CSVManager;
 
 import java.util.Map;
@@ -18,21 +18,21 @@ public class AccessoriesAdobeDataLayerTest extends BaseClass {
     public void validateEventForWhenAUserHasFinishedLoadingThePage() {
         Map<String, String> expectedEventFields = csvmanage.loadExpectedEventFieldsFromCSV(CSV_EXPECTED_FILE_PATH, 0, 1);
 
-        AdobeDataLayerUtils.navigateToPage(driver, BASE_URL);
+        AdobeDataLayerValidator.navigateToPage(driver, BASE_URL);
         HomePage hp = new HomePage(driver);
         hp.clickOnNewVehicles();
-        hp.clickOnLeadFormCloseIcon();
+        hp.handelLeadForm("test");
         hp.clickOnAccessoriesSideMenu();
 
         System.out.println("Data Layer Size : Overall Event triggered Count " + validator.getDataLayerSize());
         int dataLayerSize = validator.getDataLayerSize();
         if (dataLayerSize > 0) {
             try {
-                Map<String, String> actualEventFields = AdobeDataLayerUtils.getActualEventFieldsFromPage(driver);
+                Map<String, String> actualEventFields = AdobeDataLayerValidator.getActualEventFieldsFromPage(driver);
                 Map<String, String> flattenedExpectedEventFields = csvmanage.flattenEventFields(expectedEventFields);
                 Map<String, String> flattenedActualEventFields = csvmanage.flattenEventFields(actualEventFields);
                 csvmanage.writeExpectedAndActualToCSV(CSV_ANALYTICS_RESULT_FILE_PATH, flattenedExpectedEventFields, flattenedActualEventFields);
-                AdobeDataLayerUtils.validateEventAtIndex(driver, validator, dataLayerSize - 1, flattenedExpectedEventFields);
+                AdobeDataLayerValidator.validateEventAtIndex(driver, validator, dataLayerSize - 1, flattenedExpectedEventFields);
             } catch (Exception e) {
                 System.err.println("Error validating event at last index: " + e.getMessage());
             }

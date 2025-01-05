@@ -34,4 +34,10 @@ public class ElementUtils {
 
     }
 
+
+    public void typeIntoField(WebElement element, String texttobetyped, long durationinsec) {
+        WebElement webelement = waitForAnElement(element, durationinsec);
+        webelement.sendKeys(texttobetyped);
+    }
+
 }
