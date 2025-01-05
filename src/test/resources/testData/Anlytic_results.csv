@@ -1,5 +1,5 @@
 "Expected Data Key","Expected Data Value","Actual Data Key","Actual Data Value"
-"dealer.code","44990","dealer.code","44990","Passed"
+"dealer.code","44990","dealer.code","09529","Failed"
 "page.name","build-your-deal:chargers-and-accessories","page.name","build-your-deal:chargers-and-accessories","Passed"
 "page.type","build-your-deal","page.type","build-your-deal","Passed"
 "user.language","en-US","user.language","en-US","Passed"

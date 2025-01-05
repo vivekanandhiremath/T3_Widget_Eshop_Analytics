@@ -124,7 +124,7 @@ public class WebDriverUtil {
         return driver;
     }
 
-    public static void quitDriver(WebDriver driver) {
+    public static void quitDriver() {
         try {
             if (driver != null) {
                 driver.quit();

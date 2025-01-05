@@ -11,6 +11,8 @@ import utils.WebDriverUtil;
 import java.util.ArrayList;
 import java.util.List;
 
+import static utils.WebDriverUtil.quitDriver;
+
 public class BaseClass {
     protected WebDriver driver;
     protected AdobeDataLayerValidator validator;
@@ -33,7 +35,7 @@ public class BaseClass {
     @AfterClass
     public void tearDown() {
 
-        WebDriverUtil.quitDriver(driver);
+        quitDriver();
         if (!assertionFailures.isEmpty()) {
             assertionFailures.forEach(System.err::println);
             assert false : "There were assertion failures!";
